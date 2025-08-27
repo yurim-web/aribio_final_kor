@@ -14,7 +14,7 @@
 - 🏭 사업분야(Business Areas): `business.html`  
 - 📞 고객지원(Support): `support.html`  
 - ❓ 자주 묻는 질문(FAQ): `faq.html`  
-- ✉️ 문의(Contact): `contact.html`  
+- ✉️ 문의(Contact): `contact.html` 
 
 ---
 
