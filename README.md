@@ -9,12 +9,14 @@
 
 ## 📄 페이지 구성
 - 🏠 메인(Main): `index.html`  
-- 📦 제품(Products): `product.html`  
-- 🔬 기술(Technology): `technology.html`  
-- 🏭 사업분야(Business Areas): `business.html`  
-- 📞 고객지원(Support): `support.html`  
-- ❓ 자주 묻는 질문(FAQ): `faq.html`  
-- ✉️ 문의(Contact): `contact.html`  
+
+- 📂 **new_subpage/**
+  - 📦 제품(Products): `product.html`  
+  - 🔬 기술(Technology): `technology.html`  
+  - 🏭 사업분야(Business Areas): `business.html`  
+  - 📞 고객지원(Support): `support.html`  
+  - ❓ 자주 묻는 질문(FAQ): `faq.html`  
+  - ✉️ 문의(Contact): `contact.html`  
 
 ---
 
@@ -45,7 +47,7 @@ Cafe24 **스마트디자인(스킨)** 을 사용합니다.
 
 4. ✅ **적용**  
    - 문제 없으면 작업용 스킨을 **적용(배포)**  
-   - URL, 메뉴 매핑, 각 페이지(메인/제품/기술/사업분야/고객지원/FAQ/문의) 메뉴 연결 확인  
+   - URL, 메뉴 매핑, 각 페이지(메인/new_subpage 내 모든 서브페이지) 연결 확인  
 
 5. 🛠️ **운영 점검**  
    - 캐시 갱신(브라우저/서버)  
@@ -53,9 +55,6 @@ Cafe24 **스마트디자인(스킨)** 을 사용합니다.
 ---
 
 ## 🔁 언어 전환
-
-현재 사이트는 **헤더 영역에 언어 전환 메뉴가 배치**되어 있어, 사용자가 원하는 언어(한국어/영어/일본어/중국어)를 선택하면 해당 도메인으로 이동할 수 있습니다.  
-
 - 🇰🇷 한국몰(KOR): `https://herzion.com/` → **skin-18**  
 - 🇺🇸 영문몰(ENG): `https://en.herzion.com/` → **skin-16**  
 - 🇯🇵 일문몰(JPN): `https://jp.herzion.com/` → **skin-17**  
