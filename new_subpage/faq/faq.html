@@ -1,0 +1,679 @@
+<!--@layout(/layout/basic/layout_kor.html)-->
+
+<script>
+  const currentPage = 'faq';
+
+  const langLinks = {
+  faq: {
+    kor: 'https://herzion.com/new_subpage/faq/faq.html',
+    eng: 'https://en.herzion.com/new_subpage/faq/faq_eng.html',
+    jpn: 'https://jp.herzion.com/new_subpage/faq/faq_jpn.html',
+    cny: 'https://cn.herzion.com/new_subpage/faq/faq_cny.html'
+  },
+  };
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const mobileLangDiv = document.getElementById('mobile_lang_links');
+    const desktopLangUl = document.getElementById('desktop_lang_links');
+    const links = langLinks[currentPage];
+
+    if (mobileLangDiv && links) {
+      mobileLangDiv.innerHTML = `
+        <a href="${links.kor}"><button class="active">KOR</button></a>
+        <a href="${links.eng}"><button>ENG</button></a>
+        <a href="${links.jpn}"><button>JPN</button></a>
+        <a href="${links.cny}"><button>CHN</button></a>
+      `;
+    }
+
+    if (desktopLangUl && links) {
+      desktopLangUl.innerHTML = `
+        <a href="${links.kor}"><li data-value="kor" class="active">KOR</li></a>
+        <a href="${links.eng}"><li data-value="eng">ENG</li></a>
+        <a href="${links.jpn}"><li data-value="jpn">JPN</li></a>
+        <a href="${links.cny}"><li data-value="cny">CHN</li></a>
+      `;
+    }
+  });
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="faq.js?=202501_7" defer></script>
+<!-- 내가 만든 -->
+<link rel="stylesheet" href="new_faq.css?=20250718" />
+<link rel="stylesheet" href="mo_new_faq.css?=20250718">
+    <!-- layout js -->
+    <script src="../layout_new/layout.js?v=20250523" defer></script>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://cdn.jsdelivr.net/npm/pretendard@1.3.8/dist/web/static/pretendard.css"
+    rel="stylesheet"
+  />
+<style>
+    html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.faq, .wrapper, .container {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+  .category-buttons {
+  display: flex;
+  margin: 0 auto;
+  gap: 20px;
+  justify-content: center;
+  padding: 40px 0px;
+}
+
+.category-buttons .category-button {
+  padding: 12px 24px;
+  display: flex;
+
+  padding: 12px 24px;
+  align-items: center;
+  gap: 10px;
+  background-color: transparent;
+  border-radius: 30px;
+  border: 2px solid #23295b;
+
+  /* 버튼 글자 css */
+  color: #23295b;
+  font-family: Pretendard;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px; /* 100% */
+  letter-spacing: -0.36px;
+  
+  cursor: pointer;
+}
+
+.category-buttons .category-button.active {
+  background-color: #23295b;
+  color: #ffff;
+}
+.faq_search_wrapper .form {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+input[name="search[query]"] {
+  width: 300px;
+  padding: 10px 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+input[name="search[query]"]:focus {
+  border-color: #1D2A66;
+}
+
+.btn_search {
+  
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+ 
+  /* 검색창 부분 커스텀 css */
+    .custom-select-wrapper {
+  width:100%;
+  position: relative;
+  display: inline-block;
+}
+    .custom-select-wrapper select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 12px 40px 12px 16px; /* 오른쪽 패딩 줘야 아이콘 안 겹침 */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  min-width: 160px;
+  background-color: #fff;
+  font-family: inherit;
+}
+
+ .cata-select-arrow {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  pointer-events: none;
+} 
+
+
+
+
+
+@media all and (max-width: 768px) {
+  .category-buttons {
+display: none;
+}
+.faq_search_wrapper .form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+    .custom-select-wrapper{
+        display:none;
+        }
+
+
+    
+    }
+    
+    .faq_more_btn{
+        display:none;}
+
+
+</style>
+
+<div module="Board_ListPackage_1002">
+  <!-- 카페 24 전용 표시 ? 부분 -->
+  <!-- <div module="board_title_1002">
+    <div class="path">
+      <span>현재 위치</span>
+      <ol>
+        <li><a href="/">홈</a></li>
+        <li title="현재 위치"><strong>{$board_name}</strong></li>
+      </ol>
+    </div>
+    <div class="titleArea">
+      <h2>{$board_title} {$board_adult_icon}</h2>
+    </div>
+    <p class="imgArea">{$board_top_image}</p>
+  </div> -->
+ 
+
+  <!-- 메인 베너 부분 -->
+  <section class="banner_section">
+    <div class="hero">
+      <div class="hero_content">
+        <h1 style="margin: 0">FAQ</h1>
+        <p style="margin: 0">자주 묻는 질문</p>
+      </div>
+    </div>
+  </section>
+<section class="faq_section">
+    
+<!-- 검색 영역 모듈 -->
+<div class="faq_search_wrapper">
+  <div class="form">
+    <button class="btn_search" id="faqSearchBtn">
+      <img class="search_icon" src="images/search_icon.svg" alt="검색" ></img>
+    </button>
+    <input
+      type="text"
+      id="faqSearchInput"
+      placeholder="궁금한 내용을 검색해 보세요."
+      class="search_input"
+    ></input>
+  </div>
+</div>
+
+
+<div class="board_filter_wrap mo_category">
+  <div class="custom-select-wrapper">
+    <span module="board_category_1002">
+      {$form.board_category}
+    </span>
+    <img src="images/mo_btn_arrow_down.svg" alt="화살표" class="cata-select-arrow"></img>
+  </div>
+</div>
+
+
+
+<!-- 카테고리 버튼  -->
+<!-- 원래 select는 숨김 처리 -->
+<span module="board_category_1002" style="display: none;">
+  {$form.board_category}
+</span>
+
+<!-- 버튼이 생성될 곳 -->
+<div class="category-buttons"></div>
+
+<!-- 메인 faq 영역 -->
+  <div class="faq">
+    <div class="boardSort displaynone">
+      <!-- <span id="category-dummy" module="board_category_1002"
+        >{$form.board_category}</span
+      > -->
+    </div>
+
+    <div class="faq__header flex flex--v-center jsCateSlide">
+      <div class="faq-category flex flex--v-center"></div>
+    </div>
+
+    <!-- <div class="list-header flex flex--v-center displaynone">
+      <div class="list-header__item list-header__item--category">구분</div>
+      <div class="list-header__item">제목</div>
+    </div> -->
+      
+
+    <!-- faq 리스트 부분 -->
+    <div module="board_list_1002" class="faq__list faq_list_container">
+      <article class="faq_item_container">
+        <div class="faq__item faq_item_box">
+            <div class="faq__q relative faq_inner_content">
+            <img src="images/q_icon.svg" alt=""></img>
+            <!-- 카테고리 이름 -->
+              <div class="faq__category category_name_box">{$category_name}</div>
+            <!-- 들어가는 글 부분 -->
+            <div class="faq__a category_content_text">{$subject}</div>
+            </div>
+            <!-- 토글버튼 -->
+             <img class="toggle_arrow" src="images/toggle_arrow_down.svg" id="toggle_arrow" alt=""></img>
+          </div>
+          <!-- 토글되는 답변 콘텐츠 -->
+          <div class="faq_answer_box">
+            <div class="faq_answer_text_box">
+                <img src="images/a_icon.svg" class="pc_answer_icon" alt=""></img>
+                <img src="images/mo_answer_icon.svg" alt="" class="mo_answer_icon"></img>
+                <p style="margin: 0" class="faq_answer_text">{$content|raw}</p>
+            </div>
+          </div>
+    </article>
+
+
+        <article class="faq_item_container">
+            <div class="faq__item faq_item_box">
+                <div class="faq__q relative faq_inner_content">
+                <img src="images/q_icon.svg" alt=""></img>
+                <!-- 카테고리 이름 -->
+                  <div class="faq__category category_name_box">{$category_name}</div>
+                <!-- 들어가는 글 부분 -->
+                <div class="faq__a category_content_text">{$subject}</div>
+                </div>
+                <!-- 토글버튼 -->
+                 <img class="toggle_arrow" src="images/toggle_arrow_down.svg" id="toggle_arrow" alt=""></img>
+              </div>
+              <!-- 토글되는 답변 콘텐츠 -->
+              <div class="faq_answer_box">
+                <div class="faq_answer_text_box">
+                    <img src="images/a_icon.svg" class="pc_answer_icon" alt=""></img>
+                    <img src="images/mo_answer_icon.svg" alt="" class="mo_answer_icon"></img>
+                    <p style="margin: 0" class="faq_answer_text">{$content|raw}</p>
+                </div>
+              </div>
+        </article>
+
+        <article class="faq_item_container">
+          <div class="faq__item faq_item_box">
+              <div class="faq__q relative faq_inner_content">
+              <img src="images/q_icon.svg" alt=""></img>
+              <!-- 카테고리 이름 -->
+                <div class="faq__category category_name_box">{$category_name}</div>
+              <!-- 들어가는 글 부분 -->
+              <div class="faq__a category_content_text">{$subject}</div>
+              </div>
+              <!-- 토글버튼 -->
+               <img class="toggle_arrow" src="images/toggle_arrow_down.svg" id="toggle_arrow" alt=""></img>
+            </div>
+            <!-- 토글되는 답변 콘텐츠 -->
+            <div class="faq_answer_box">
+              <div class="faq_answer_text_box">
+                  <img src="images/a_icon.svg" class="pc_answer_icon" alt=""></img>
+                  <img src="images/mo_answer_icon.svg" alt="" class="mo_answer_icon"></img>
+                  <p style="margin: 0" class="faq_answer_text">{$content|raw}</p>
+              </div>
+            </div>
+      </article>
+      <article class="faq_item_container">
+        <div class="faq__item faq_item_box">
+            <div class="faq__q relative faq_inner_content">
+            <img src="images/q_icon.svg" alt=""></img>
+            <!-- 카테고리 이름 -->
+              <div class="faq__category category_name_box">{$category_name}</div>
+            <!-- 들어가는 글 부분 -->
+            <div class="faq__a category_content_text">{$subject}</div>
+            </div>
+            <!-- 토글버튼 -->
+             <img class="toggle_arrow" src="images/toggle_arrow_down.svg" id="toggle_arrow" alt=""></img>
+          </div>
+          <!-- 토글되는 답변 콘텐츠 -->
+          <div class="faq_answer_box">
+            <div class="faq_answer_text_box">
+                <img src="images/a_icon.svg" class="pc_answer_icon" alt=""></img>
+                <img src="images/mo_answer_icon.svg" alt="" class="mo_answer_icon"></img>
+                <p style="margin: 0" class="faq_answer_text">{$content|raw}</p>
+            </div>
+          </div>
+    </article>
+    <article class="faq_item_container">
+      <div class="faq__item faq_item_box">
+          <div class="faq__q relative faq_inner_content">
+          <img src="images/q_icon.svg" alt=""></img>
+          <!-- 카테고리 이름 -->
+            <div class="faq__category category_name_box">{$category_name}</div>
+          <!-- 들어가는 글 부분 -->
+          <div class="faq__a category_content_text">{$subject}</div>
+          </div>
+          <!-- 토글버튼 -->
+           <img class="toggle_arrow" src="images/toggle_arrow_down.svg" id="toggle_arrow" alt=""></img>
+        </div>
+        <!-- 토글되는 답변 콘텐츠 -->
+        <div class="faq_answer_box">
+          <div class="faq_answer_text_box">
+              <img src="images/a_icon.svg" class="pc_answer_icon" alt=""></img>
+              <img src="images/mo_answer_icon.svg" alt="" class="mo_answer_icon"></img>
+              <p style="margin: 0" class="faq_answer_text">{$content|raw}</p>
+          </div>
+        </div>
+  </article>
+  <article class="faq_item_container">
+    <div class="faq__item faq_item_box">
+        <div class="faq__q relative faq_inner_content">
+        <img src="images/q_icon.svg" alt=""></img>
+        <!-- 카테고리 이름 -->
+          <div class="faq__category category_name_box">{$category_name}</div>
+        <!-- 들어가는 글 부분 -->
+        <div class="faq__a category_content_text">{$subject}</div>
+        </div>
+        <!-- 토글버튼 -->
+         <img class="toggle_arrow" src="images/toggle_arrow_down.svg" id="toggle_arrow" alt=""></img>
+      </div>
+      <!-- 토글되는 답변 콘텐츠 -->
+      <div class="faq_answer_box">
+        <div class="faq_answer_text_box">
+            <img src="images/a_icon.svg" class="pc_answer_icon" alt=""></img>
+            <img src="images/mo_answer_icon.svg" alt="" class="mo_answer_icon"></img>
+            <p style="margin: 0" class="faq_answer_text">{$content|raw}</p>
+        </div>
+      </div>
+</article>
+<article class="faq_item_container">
+  <div class="faq__item faq_item_box">
+      <div class="faq__q relative faq_inner_content">
+      <img src="images/q_icon.svg" alt=""></img>
+      <!-- 카테고리 이름 -->
+        <div class="faq__category category_name_box">{$category_name}</div>
+      <!-- 들어가는 글 부분 -->
+      <div class="faq__a category_content_text">{$subject}</div>
+      </div>
+      <!-- 토글버튼 -->
+       <img class="toggle_arrow" src="images/toggle_arrow_down.svg" id="toggle_arrow" alt=""></img>
+    </div>
+    <!-- 토글되는 답변 콘텐츠 -->
+    <div class="faq_answer_box">
+      <div class="faq_answer_text_box">
+          <img src="images/a_icon.svg" class="pc_answer_icon" alt=""></img>
+          <img src="images/mo_answer_icon.svg" alt="" class="mo_answer_icon"></img>
+          <p style="margin: 0" class="faq_answer_text">{$content|raw}</p>
+      </div>
+    </div>
+</article>
+    <article class="faq_item_container">
+      <div class="faq__item faq_item_box">
+          <div class="faq__q relative faq_inner_content">
+          <img src="images/q_icon.svg" alt=""></img>
+          <!-- 카테고리 이름 -->
+            <div class="faq__category category_name_box">{$category_name}</div>
+          <!-- 들어가는 글 부분 -->
+          <div class="faq__a category_content_text">{$subject}</div>
+          </div>
+          <!-- 토글버튼 -->
+           <img class="toggle_arrow" src="images/toggle_arrow_down.svg" id="toggle_arrow" alt=""></img>
+        </div>
+        <!-- 토글되는 답변 콘텐츠 -->
+        <div class="faq_answer_box">
+          <div class="faq_answer_text_box">
+              <img src="images/a_icon.svg" class="pc_answer_icon" alt=""></img>
+              <img src="images/mo_answer_icon.svg" alt="" class="mo_answer_icon"></img>
+              <p style="margin: 0" class="faq_answer_text">{$content|raw}</p>
+          </div>
+        </div>
+  </article>
+
+    </div>
+    <!-- 더보기 버튼 -->
+     <button class="faq_more_btn" style="display:none;">
+
+      <img src="images/+_icon.svg" alt=""></img>
+          <span>more</span>
+     </button>
+
+
+    </div>
+    <!-- <p class="message {$empty_display|display}" module="board_empty_1002">
+      {$empty_message}
+    </p> -->
+  </div>
+
+  <!-- <div
+    module="board_ButtonList_1002"
+    class="ec-base-button gBottom {$write_display|display}"
+  >
+    <span class="gRight">
+      <a
+        href="/board/free/write.html{$param_write}"
+        class="btnSubmitFix sizeM {$write_display|display}"
+        >글쓰기</a
+      >
+    </span>
+  </div>
+</div>
+
+<div module="board_paging_1002" class="ec-base-paginate typeList">
+  <a href="{$param_prev}">이전 페이지</a>
+  <ol>
+    <li><a href="{$param_num}" class="{$param_class}">{$page_num}</a></li>
+    <li><a href="{$param_num}" class="{$param_class}">{$page_num}</a></li>
+  </ol>
+  <a href="{$param_next}">다음 페이지</a>
+</div> -->
+</section>
+
+
+
+
+
+
+
+<!-- 카페 24에 원래 있던 부분 -->
+
+<!-- Admin only -->
+<!--<div module="board_catemove_1002">-->
+  <!--@css(/css/module/board/catemove.css)-->
+
+
+  <!-- <span class="gColumn">{$board_catemove_selectbox}</span>
+  <span class="gColumn"
+    ><a href="#none" class="btnNormal sizeS" onclick="{$action_category_move}"
+      >{$category_move}</a
+    ></span
+  >
+</div> -->
+
+<!--<div module="board_function_1002">-->
+  <!--@css(/css/module/board/function.css)-->
+  <!-- <span class="gColumn">{$board_function_selectbox}</span>
+  <span class="gColumn">
+    <a href="#none" class="btnNormal sizeS" onclick="{$action_article_move}"
+      >{$article_move}</a
+    >
+    <a href="#none" class="btnNormal sizeS" onclick="{$action_article_copy}"
+      >{$article_copy}</a
+    >
+  </span>
+  <span class="ec-base-help">{$board_function_help|replace:*,}</span>
+</div> -->
+<!-- // Admin only -->
+
+
+
+<!-- 카테고리 버튼 생성 스크립트 -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(function () {
+      const select = document.querySelector("select[name='board_category']");
+      const buttonWrap = document.querySelector(".category-buttons");
+
+      if (!select || !buttonWrap) return;
+
+      const currentValue = select.value;
+
+      Array.from(select.options).forEach((option) => {
+        const btn = document.createElement("button");
+        btn.textContent = option.text;
+        btn.dataset.value = option.value;
+
+        // 기본 버튼 클래스 적용
+        btn.classList.add("category-button");
+
+        // 현재 선택된 카테고리 버튼이면 active 클래스 부여
+        if (option.value === currentValue) {
+          btn.classList.add("active");
+        }
+
+        btn.addEventListener("click", function () {
+          // 모든 버튼에서 active 제거
+          buttonWrap.querySelectorAll("button").forEach(b => b.classList.remove("active"));
+
+          // 현재 버튼에 active 추가
+          btn.classList.add("active");
+
+          // select 값 변경
+          select.value = btn.dataset.value;
+
+          // 카페24 Ajax 필터링을 위한 change 이벤트 트리거
+          select.dispatchEvent(new Event("change"));
+        });
+
+        buttonWrap.appendChild(btn);
+      });
+    }, 300);
+  });
+    
+    
+ document.addEventListener("DOMContentLoaded", function () {
+    const input = document.getElementById("faqSearchInput");
+    const button = document.getElementById("faqSearchBtn");
+
+    function searchFAQ() {
+      const keyword = input.value.trim().toLowerCase();
+      const items = document.querySelectorAll(".faq_item_container");
+
+      items.forEach(item => {
+        const title = item.querySelector(".faq__a")?.textContent.toLowerCase() || "";
+        const answer = item.querySelector(".faq_answer_text")?.textContent.toLowerCase() || "";
+
+        if (title.includes(keyword) || answer.includes(keyword)) {
+          item.style.display = "";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    }
+
+    button.addEventListener("click", function (e) {
+      e.preventDefault();
+      searchFAQ();
+    });
+
+    input.addEventListener("keypress", function (e) {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        searchFAQ();
+      }
+    });
+  });
+        
+        
+        //더보기 버튼 
+        
+        // 토글 기능
+
+// ⬇️⬇️⬇️⬇️⬇️⬇️ FAQ 토글 및 더보기 전체 스크립트 ⬇️⬇️⬇️⬇️⬇️⬇️
+document.addEventListener("DOMContentLoaded", function () {
+  const ITEMS_TO_SHOW = 6;
+  let currentlyShown = 0;
+
+  function setupFAQMoreButton() {
+    const faqListContainer = document.querySelector(".faq_list_container");
+    const faqItems = document.querySelectorAll(".faq_item_container.xans-record-");
+    currentlyShown = 0;
+
+    // 모두 숨김 처리
+    faqItems.forEach((item) => (item.style.display = "none"));
+
+    // 첫 6개만 보이기
+    for (let i = 0; i < ITEMS_TO_SHOW && i < faqItems.length; i++) {
+      faqItems[i].style.display = "";
+      currentlyShown++;
+    }
+
+    // 기존 버튼 제거
+    const existingBtn = document.querySelector(".faq_more_btn");
+    if (existingBtn) existingBtn.remove();
+
+    // 조건 만족 시 버튼 생성
+    if (faqItems.length > ITEMS_TO_SHOW) {
+      const moreBtn = document.createElement("button");
+      moreBtn.className = "faq_more_btn";
+      moreBtn.innerHTML = `
+                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+<path d="M12 6.85714H6.85714V12H5.14286V6.85714H0V5.14286H5.14286V0H6.85714V5.14286H12V6.85714Z" fill="#3C3C3C"/>
+</svg>
+        <span>more</span>
+      `;
+
+      moreBtn.addEventListener("click", () => {
+        const next = currentlyShown + ITEMS_TO_SHOW;
+        for (let i = currentlyShown; i < next && i < faqItems.length; i++) {
+          faqItems[i].style.display = "";
+        }
+        currentlyShown = next;
+
+        if (currentlyShown >= faqItems.length) {
+          moreBtn.remove();
+        }
+      });
+
+      faqListContainer.appendChild(moreBtn);
+    }
+  }
+
+  // 게시물이 로딩될 때까지 기다림
+  const timer = setInterval(() => {
+    const faqItems = document.querySelectorAll(".faq_item_container.xans-record-");
+    if (faqItems.length > 0) {
+      clearInterval(timer);
+      setupFAQMoreButton();
+    }
+  }, 100);
+
+  // 최대 2초만 대기
+  setTimeout(() => clearInterval(timer), 2000);
+});
+
+// ⬆️⬆️⬆️⬆️⬆️⬆️ FAQ 토글 및 더보기 전체 스크립트 끝 ⬆️⬆️⬆️⬆️⬆️⬆️
+
+        
+        
+        
+     
+</script>
+

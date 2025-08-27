@@ -1,0 +1,119 @@
+<!--@layout(/layout/basic/layout.html)-->
+<div class="section" module="board_CommentDeletePackage_1002">
+    <!--@css(/css/module/board/commentDeletePackage.css)-->
+    <div module="board_title_1002">
+        <div class="path">
+            <span>현재 위치</span>
+            <ol>
+                <li><a href="/">홈</a></li>
+                <li><a href="#">게시판</a></li>
+                <li title="현재 위치"><strong>{$board_name}</strong></li>
+            </ol>
+        </div>
+
+        <div class="titleArea">
+            <h2>{$board_name}</h2>
+        </div>
+    </div>
+
+    <div module="Board_CommentDel_1002">
+        <div class="ec-base-box typeThin gPadding center">
+            <fieldset>
+                <legend>댓글삭제</legend>
+                <p class="headDesc">댓글 등록 시 입력한 <strong class="txtEm">비밀번호</strong>를 입력하여 주십시요.</p>
+                <p class="password">{$form.comment_password}</p>
+            </fieldset>
+        </div>
+        <div class="ec-base-button gBottom">
+            <a href="{$link_board_list}" class="btnNormalFix sizeM">목록</a>
+            <button type="submit" class="btnSubmitFix sizeM">확인</button>
+        </div>
+    </div>
+</div>
+<div module="board_ReplyPackage_6">
+<!--@css(/css/module/board/359/replypackage_6.css)-->
+    <div module="board_title_6">
+        <div class="path">
+            <h2>현재 위치</h2>
+            <ol>
+                <li><a href="/">홈</a></li>
+                <li><a href="/myshop/index.html">마이쇼핑</a></li>
+                <li title="현재 위치"><strong>{$board_name}</strong></li>
+            </ol>
+        </div>
+
+        <div class="title">
+            <h2>{$board_title}</h2>
+            <p>{$board_info}</p>
+        </div>
+    </div>
+
+    <div module="Board_Read_6">
+        <!--
+            $login_page_url = /member/login.html
+        -->
+        <div class="boardWrite">
+            <table border="1" summary="">
+            <caption>1:1 맞춤상담 상세</caption>
+            <tbody>
+                <tr class="first">
+                    <th scope="row">제목</th>
+                    <td>{$subject}</td>
+                </tr>
+                <tr>
+                    <th scope="row">작성자</th>
+                    <td>{$writer}</td>
+                </tr>
+                <tr class="etcArea">
+                    <td colspan="2">
+                        <ul>
+                            <li class="comment">
+                                <strong class="th">답변여부</strong> <span class="td">{$consult}</span>
+                            </li>
+                            <li class="date {$config.use_date|display}">
+                                <strong class="th">문의일시</strong> <span class="td">{$write_date}</span>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="view">
+                    <td colspan="2">
+                        <div class="detail">{$content}</div>
+                    </td>
+                </tr>
+            </tbody>
+            </table>
+            </div>
+        </div>
+
+        <div module="board_reply_6">
+            <!--
+                $reply_success_url = /board/consult/list.html
+                $deny_access_url = /board/consult/list.html
+             -->
+            <div class="boardWrite">
+                <table border="1" summary="">
+                <caption>1:1 맞춤상담 답변쓰기 폼</caption>
+
+                <tbody>
+                    <tr class="first">
+                        <th scope="col">답변 입력</th>
+                    </tr>
+                    <tr>
+                        <td class="write">
+                            {$form.content}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="btnArea">
+            <span class="left {$config.is_admin|display}"><a href="#none" onclick="{$action_comment_admin}"><img src="http://img.echosting.cafe24.com/skin/base_ko_KR/board/btn_reply_admin.gif" alt="관리자답변보기" /></a></span>
+            <span class="left"><a href="/board/consult/list.html{$param_list}"><img src="http://img.echosting.cafe24.com/skin/base_ko_KR/board/btn_list.gif" alt="목록" /></a></span>
+            <a href="#none" onclick="{$action_reply}"><img src="http://img.echosting.cafe24.com/skin/base_ko_KR/board/btn_register.gif" alt="등록" /></a>
+            <a href="/board/consult/list.html{$param_list}"><img src="http://img.echosting.cafe24.com/skin/base_ko_KR/board/btn_cancel.gif" alt="취소" /></a>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,315 @@
+/* 팟캐스트 영역 스타일 코드 */
+.podcast_section {
+  background-color: #ffffff;
+  padding: 152px 80px 106px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.podcast_title {
+  margin-bottom: 12px;
+  color: #3c3c3c;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 149.985%; /* 35.996px */
+  padding: 0;
+  margin: 0;
+}
+.podcast_sub_text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: Poppins;
+  font-style: normal;
+}
+.podcast_sub_title {
+  color: #3c3c3c;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 28px; /* 100% */
+  padding: 0;
+  margin: 0;
+}
+.podcast_title_box {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+/* .tooltip_icon {
+    margin-top: 6px;
+  } */
+/* 튤팁스타일 */
+/* 튤팁 스타일 */
+.tooltip_wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* 아이콘과 말풍선 간격 */
+}
+
+.custom_tooltip {
+  display: none;
+  position: absolute;
+  left: 35px; /* 아이콘 오른쪽에 충분한 간격 */
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border: 1px solid #707070;
+  padding: 16px;
+  border-radius: 4px;
+  z-index: 10;
+  text-align: left;
+  width: 621px;
+
+  color: #3c3c3c;
+  font-family: Pretendard;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 19px; /* 100% */
+  letter-spacing: -0.26px;
+}
+
+/* 꼬리(arrow) 왼쪽에 추가 */
+.custom_tooltip::before {
+  content: "";
+  position: absolute;
+  left: -8px; /* 꼬리 위치도 살짝 조정 */
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 6px 9px 6px 0; /* 꼬리 크기 ↓ */
+  border-style: solid;
+  border-color: transparent #fff transparent transparent;
+  filter: drop-shadow(-1px 0 0 #707070);
+}
+
+.tooltip_wrapper:hover .custom_tooltip {
+  display: block;
+}
+/* 튤팁부분 끝 */
+
+.podcast_sub_text p {
+  color: #707070;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 20px; /* 100% */
+  padding: 0;
+  margin: 0;
+}
+.podcast_item_container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 80px 18px; /* 40px(행 간격), 18px(열 간격) */
+}
+.podcast_content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.podcast_item_box {
+  display: flex;
+  flex-direction: column;
+}
+.podcast_item_img {
+  width: 100%;
+  /* height: 360px; */
+  background-color: grey;
+  border-radius: 16px;
+  position: relative;
+}
+.podcast_item_txt {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-family: Pretendard;
+  font-style: normal;
+}
+.podcast_item_img > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+.podcast_item_txt h3 {
+  margin: 0;
+  color: #3c3c3c;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px; /* 100% */
+  letter-spacing: -0.36px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* 최대 2줄까지 표시 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  line-height: 1.4; /* 줄간격 조정(선택) */
+  max-height: 2.8em; /* line-height * 2 (2줄) */
+}
+.podcast_item_txt p {
+  margin: 0;
+  font-family: Poppins;
+  color: #707070;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 18px; /* 100% */
+  letter-spacing: -0.36px;
+}
+/* mp3 아이콘 */
+.play_mp3_btn {
+  width: 72px;
+  height: 72px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 11;
+}
+.play_mp3_btn img {
+  width: 100%;
+  height: 100%;
+}
+.mp3_hover_window {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  border-radius: 16px;
+}
+.podcast_item_img:hover .mp3_hover_window {
+  display: block;
+}
+.podcast_item_img .mp3_hover_window,
+.podcast_item_img .play_mp3_btn {
+  display: none;
+}
+.podcast_item_img:hover .mp3_hover_window,
+.podcast_item_img:hover .play_mp3_btn {
+  display: block;
+}
+/* 기본 상태는 숨김 */
+.mp3_start_icon {
+  display: none;
+}
+.podcast_item_img.playing .mp3_start_icon {
+  display: block !important;
+}
+.podcast_item_img:hover .mp3_start_icon {
+  display: block;
+}
+.podcast_item_img.playing .play_mp3_btn {
+  display: block !important;
+}
+
+/* 더보기 버튼 */
+.more_btn {
+  background-color: #ffffff;
+  margin-bottom: 80px;
+  width: 209px;
+  height: 58px;
+  gap: 11px;
+  border-radius: 55px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+
+  border: 2px solid #3c3c3c;
+}
+.more_btn span {
+  color: #3c3c3c;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px; /* 100% */
+}
+
+/********************* Mobile *********************/
+@media all and (max-width: 767px) {
+  .podcast_section {
+    padding: 100px 20px 100px 20px;
+    gap: 20px;
+  }
+  .podcast_item_container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  .potcast_title {
+    font-size: 20px;
+  }
+  .potcast_sub_title {
+    font-size: 24px;
+  }
+  .podcast_sub_text p {
+    font-size: 16px;
+  }
+  .podcast_item_img {
+    /* height: 320px; */
+  }
+  .podcast_item_txt {
+    gap: 8px;
+  }
+  .podcast_item_txt h3 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .podcast_item_txt p {
+    font-size: 15px;
+  }
+  .custom_tooltip {
+    width: 177px;
+    font-size: 10px;
+    line-height: 16px;
+    padding: 14px;
+    letter-spacing: -0.46px;
+  }
+}
+
+/********************* Tablet *********************/
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .podcast_section {
+    padding: 100px 40px 100px 40px;
+    gap: 20px;
+  }
+  .podcast_item_container {
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    flex-direction: column;
+    gap: 60px 18px;
+  }
+  .potcast_title {
+    font-size: 20px;
+  }
+  .potcast_sub_title {
+    font-size: 24px;
+  }
+  .podcast_sub_text p {
+    font-size: 16px;
+  }
+  .podcast_item_img {
+    /* height: 320px; */
+  }
+  .podcast_item_txt {
+    gap: 8px;
+  }
+  .podcast_item_txt h3 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .podcast_item_txt p {
+    font-size: 15px;
+  }
+}
