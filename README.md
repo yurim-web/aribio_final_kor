@@ -3,30 +3,28 @@
 - 🏢 **프로젝트 유형:** Corporate/Product Website (Cafe24)  
 - 🔗 **공식 사이트:** [https://herzion.com/](https://herzion.com/)  
 - 💻 **언어:** HTML, CSS, JavaScript  
-- 🌏 **대상 몰:** 한국몰 (KR) — 영문/일문/중문몰  
+- 🌏 **대상 몰:** 한국몰 (KOR) — 영문몰/일문몰/중문몰 운영  
 
 ---
 
 ## 📄 페이지 구성
 - 🏠 메인: `index.html`  
-- 📦 제품: `product.html` 
-- 🔬 기술: `technology.html` 
+- 📦 제품: `product.html`  
+- 🔬 기술: `technology.html`  
 - 🏭 사업분야: `business.html`  
-- 📞 고객지원: `support.html` 
+- 📞 고객지원: `support.html`  
 - ❓ FAQ: `faq.html`  
-- ✉️ 문의: `contact.html` 
-- 🧠 HeyBrain: `heybrain.html`
+- ✉️ 문의: `contact.html`  
 
 ---
 
 ## ⚙️ 기술 스택
-- 📝 **HTML5** (semantic markup)  
+- 📝 **HTML5** (시맨틱 마크업)  
 - 🎨 **CSS3** (반응형)  
 - ⚡ **JavaScript (ES6+)** (컴포넌트성 유틸/상호작용)  
 - 🖼️ **Swiper.js** (메인 배너/슬라이드)  
 - 🎭 **AOS** (스크롤 애니메이션)  
 - 🧩 **jQuery** (Cafe24 테마 내장 의존성)  
-
 
 ---
 
@@ -51,4 +49,16 @@ Cafe24 **스마트디자인(스킨)** 을 사용합니다.
 
 5. 🛠️ **운영 점검**  
    - 캐시 갱신(브라우저/서버)  
+
+---
+
+## 🔁 언어 전환 (선택 사항)
+
+현재 사이트는 **헤더 영역에 언어 전환 메뉴가 배치**되어 있어, 사용자가 원하는 언어(한국어/영어/일본어/중국어)를 선택하면 해당 도메인으로 이동할 수 있습니다.  
+
+- 🇰🇷 한국몰(KOR): `https://herzion.com/`  
+- 🇺🇸 영문몰(ENG): `https://en.herzion.com/`  
+- 🇯🇵 일문몰(JPN): `https://jp.herzion.com/`  
+- 🇨🇳 중문몰(CHN): `https://cn.herzion.com/`  
+
 
